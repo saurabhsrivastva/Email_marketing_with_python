@@ -9,8 +9,9 @@ from email.mime.multipart import MIMEMultipart
 def email_send(reciever):
     message = MIMEMultipart("Headet")
     message["Subject"] = "first email template"
-    message["From"] = "agrafort72@gmail.com"
+    message["From"] = your email
     message["To"] = reciever
+    # this is recoommended for plain text
     # text = """\
     # Hi,
     # How are you?
@@ -34,8 +35,8 @@ def email_send(reciever):
 
     server= smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login('agrafort72@gmail.com', '@Saurabh8502')
-    server.sendmail('agrafort72@gmail.com', reciever, message.as_string())
+    server.login((your email, (your email password)
+    server.sendmail(sender email, reciever, message.as_string())
 
 mail_file = open('data/emails.txt', 'r')
 emails     = mail_file.read().split('\n')
